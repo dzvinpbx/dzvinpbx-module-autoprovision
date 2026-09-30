@@ -13,9 +13,9 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 /*
- * Copyright © MIKO LLC - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
+ * Copyright © MIKO LLC
+ * Licensed under the GNU General Public License v3.0 or later;
+ * see the LICENSE file in the root of this repository.
  */
 
 /* global globalRootUrl, Config, Form, UserMessage */
