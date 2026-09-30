@@ -1,0 +1,138 @@
+<?php
+
+declare(strict_types=1);
+/**
+ * Copyright © MIKO LLC - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Alexey Portnov, 10 2019
+ */
+
+namespace Modules\ModuleAutoprovision\Models;
+
+use MikoPBX\Common\Models\Extensions;
+use MikoPBX\Modules\Models\ModulesModelsBase;
+use Phalcon\Mvc\Model\Relation;
+
+class ModuleAutoprovision extends ModulesModelsBase
+{
+
+    /**
+     * @Primary
+     * @Identity
+     * @Column(type="integer", nullable=false)
+     */
+    public $id;
+
+    /**
+     * Занятый приложением внутренний номер доступный в списках выбора
+     *
+     * @Column(type="string", nullable=true)
+     */
+    public $extension;
+
+    /**
+     * Black MAC lists
+     *
+     * @Column(type="string", nullable=true)
+     */
+    public $mac_black;
+
+    /**
+     * White MAC lists
+     *
+     * @Column(type="string", nullable=true)
+     */
+    public $mac_white;
+
+    /**
+     * PBX host IP address
+     *
+     * @Column(type="string", nullable=true)
+     */
+    public $pbx_host;
+
+    /**
+     * Additional params
+     *
+     * @Column(type="string", nullable=true)
+     */
+    public $additional_params;
+
+    /**
+     * SIP secret used by the autoprovision peer.
+     * Generated at install time; never expose in templates or logs.
+     *
+     * @Column(type="string", nullable=true)
+     */
+    public $sip_secret;
+
+    /**
+     * TCP port for the module's dedicated HTTP listener.
+     * Served by a separate nginx server-block so phones bypass the global
+     * HTTPS redirect of the admin UI. Stored as string to match Phalcon's
+     * conventional column types for this module.
+     *
+     * @Column(type="string", nullable=true)
+     */
+    public $http_port;
+
+    /**
+     * Enables the pure-PHP TFTP server (UDP/69) for phones / firmware that
+     * prefer DHCP option 66 over multicast PnP. Stored as a Phalcon-style
+     * boolean column ('0'/'1' string) to match the rest of this model.
+     *
+     * @Column(type="string", nullable=true)
+     */
+    public $tftp_enabled;
+
+    /**
+     * Returns dynamic relations between module models and common models
+     * MikoPBX check it in ModelsBase after every call to keep data consistent
+     *
+     * There is example to describe the relation between Providers and ModuleTemplate models
+     *
+     * It is important to duplicate the relation alias on message field after Models\ word
+     *
+     * @param $calledModelObject
+     *
+     * @return void
+     */
+    public static function getDynamicRelations(&$calledModelObject): void
+    {
+        if (is_a($calledModelObject, Extensions::class)) {
+            $calledModelObject->hasOne(
+                'number',
+                __CLASS__,
+                'extension',
+                [
+                    'alias'      => 'ModuleAutoprovision',
+                    'foreignKey' => [
+                        'allowNulls' => 0,
+                        'message'    => __CLASS__,
+                        'action'     => Relation::ACTION_CASCADE,
+                    ],
+                ]
+            );
+        }
+    }
+
+    public function initialize(): void
+    {
+        $this->setSource('m_ModuleAutoprovision');
+        parent::initialize();
+        $this->belongsTo(
+            'extension',
+            Extensions::class,
+            'number',
+            [
+                'alias'      => 'Extensions',
+                'foreignKey' => [
+                    'allowNulls' => false,
+                    'action'     => Relation::NO_ACTION,
+                ],
+            ]
+        );
+    }
+
+}
