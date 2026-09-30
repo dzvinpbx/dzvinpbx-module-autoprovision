@@ -33,8 +33,8 @@ class AutoprovisionFanvil extends Autoprovision implements ConfManager
 
 
         $filename             = "{$this->tempDir}/{$req_data['mac']}.txt";
-        $sip_port             = $this->mikoPBXConfig->getGeneralSettings('SIPPort');
-        $voice_mail_extension = $this->mikoPBXConfig->getGeneralSettings('VoicemailExten');
+        $sip_port             = $this->dzvinPBXConfig->getGeneralSettings('SIPPort');
+        $voice_mail_extension = $this->dzvinPBXConfig->getGeneralSettings('VoicemailExten');
 
         /** @var ModuleAutoprovision $settings */
         $settings = ModuleAutoprovision::findFirst();

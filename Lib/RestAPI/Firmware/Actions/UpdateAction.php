@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Lib\RestAPI\Firmware\Actions;
 
-use MikoPBX\Core\System\SystemMessages;
-use MikoPBX\PBXCoreREST\Lib\PBXApiResult;
+use DzvinPBX\Core\System\SystemMessages;
+use DzvinPBX\PBXCoreREST\Lib\PBXApiResult;
 use Modules\ModuleAutoprovision\Lib\RestAPI\Firmware\Repository;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovisionFirmware;
 

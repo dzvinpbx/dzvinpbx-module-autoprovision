@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Lib\RestAPI\Firmware;
 
-use MikoPBX\PBXCoreREST\Lib\Common\AbstractDataStructure;
-use MikoPBX\PBXCoreREST\Lib\Common\OpenApiSchemaProvider;
+use DzvinPBX\PBXCoreREST\Lib\Common\AbstractDataStructure;
+use DzvinPBX\PBXCoreREST\Lib\Common\OpenApiSchemaProvider;
 
 /**
  * OpenAPI / sanitisation schema for the Firmware resource.

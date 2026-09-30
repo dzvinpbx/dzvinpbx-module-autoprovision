@@ -9,13 +9,13 @@ declare(strict_types=1);
  */
 
 namespace Modules\ModuleAutoprovision\Lib\RestAPI\Controllers;
-use MikoPBX\Common\Models\Extensions;
-use MikoPBX\Common\Models\Users;
-use MikoPBX\Core\System\Network;
-use MikoPBX\Core\System\SystemMessages;
-use MikoPBX\Modules\PbxExtensionUtils;
-use MikoPBX\PBXCoreREST\Controllers\Modules\ModulesControllerBase;
-use MikoPBX\Common\Library\Text;
+use DzvinPBX\Common\Models\Extensions;
+use DzvinPBX\Common\Models\Users;
+use DzvinPBX\Core\System\Network;
+use DzvinPBX\Core\System\SystemMessages;
+use DzvinPBX\Modules\PbxExtensionUtils;
+use DzvinPBX\PBXCoreREST\Controllers\Modules\ModulesControllerBase;
+use DzvinPBX\Common\Library\Text;
 use Modules\ModuleAutoprovision\Lib\Autoprovision;
 use Modules\ModuleAutoprovision\Lib\Transliterate;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovision;

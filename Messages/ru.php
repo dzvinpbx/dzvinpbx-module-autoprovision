@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2023 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -73,9 +73,9 @@ return [
 При описании URI допускается использовать символ <b>%</b> - означающий "любой набор символов" <br>
 URI <b>/%/%/test.cfg</b> будет соответствовать <b>/1/2/test.cfg</b>  и <b>/test/test3/test.cfg</b>',
 
-    'mod_Autoprovision_header'            => 'Если модуль включен, то на АТС становится доступна учетная запись SIP "<b>apv-miko-pbx</b>"
+    'mod_Autoprovision_header'            => 'Если модуль включен, то на АТС становится доступна учетная запись SIP "<b>apv-dzvin-pbx</b>"
 <br>Для автоматической настройки телефона необходимо сбросить его к заводским настройками.
-<br>Если телефон подключается к АТС впервые, то он будет зарегистрирован на учетной записи "<b>apv-miko-pbx</b>".
+<br>Если телефон подключается к АТС впервые, то он будет зарегистрирован на учетной записи "<b>apv-dzvin-pbx</b>".
 <br>Для настройки телефона необходимо с него позвонить на номер "<b>%extension%</b>", где XXX - это внутренний номер на АТС.
 <br><br>
 Автонастройка возможна только для локальной сети предприятия, для телефонов <b>Yealink, Snom, Fanvil</b>.',

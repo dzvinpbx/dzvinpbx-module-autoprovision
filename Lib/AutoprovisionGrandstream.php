@@ -34,8 +34,8 @@ class AutoprovisionGrandstream extends Autoprovision implements ConfManager
 
         $filename = "{$this->tempDir}/cfg{$req_data['mac']}.xml";
 
-        $sipPort             = $this->mikoPBXConfig->getGeneralSettings('SIPPort');
-        $voiceMailExtension  = $this->mikoPBXConfig->getGeneralSettings('VoicemailExten');
+        $sipPort             = $this->dzvinPBXConfig->getGeneralSettings('SIPPort');
+        $voiceMailExtension  = $this->dzvinPBXConfig->getGeneralSettings('VoicemailExten');
 
         $sipPeer = $sip_peers['1'] ?? null;
 
@@ -47,7 +47,7 @@ class AutoprovisionGrandstream extends Autoprovision implements ConfManager
         if ($sipPeer !== null) {
             // Account 1: enable + register
             $cfg .= "        <P271>1</P271>\n";
-            $cfg .= "        <P270>" . htmlspecialchars("MikoPBX ({$sipPeer['extension']})", ENT_XML1) . "</P270>\n";
+            $cfg .= "        <P270>" . htmlspecialchars("DzvinPBX ({$sipPeer['extension']})", ENT_XML1) . "</P270>\n";
             $cfg .= "        <P3>" . htmlspecialchars($sipPeer['callerid'], ENT_XML1) . "</P3>\n";
             $cfg .= "        <P47>" . htmlspecialchars($req_data['ip_srv'], ENT_XML1) . "</P47>\n";
             $cfg .= "        <P63>{$sipPort}</P63>\n";

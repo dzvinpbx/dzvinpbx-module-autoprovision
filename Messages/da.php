@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'Når du beskriver en MAC-adresse, er det tilladt at bruge symbolet <b>%</b> - hvilket betyder "ethvert sæt af tegn" <br>
 Skabelonen <b>805e0c67%</b> vil matche <b>805e0c670001</b> og <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>Bemærk!</b> Alle URI\'er bygges relativt til basisværdien <b>/pbxcore/api/autoprovision-http</b><br>Når du beskriver en URI, kan symbolet <b>%</b> bruges — det betyder „enhver sekvens af tegn“.<br>URI\'en <b>/%/%/test.cfg</b> matcher <b>/1/2/test.cfg</b> og <b>/test/test3/test.cfg</b>',
-    'mod_Autoprovision_header' => 'Hvis modulet er aktiveret, bliver SIP-kontoen "<b>apv-miko-pbx</b>" tilgængelig på PBX\'en.
+    'mod_Autoprovision_header' => 'Hvis modulet er aktiveret, bliver SIP-kontoen "<b>apv-dzvin-pbx</b>" tilgængelig på PBX\'en.
 <br>For automatisk at konfigurere din telefon skal du nulstille den til fabriksindstillingerne.
-<br>Hvis telefonen opretter forbindelse til PBX\'en for første gang, vil den blive registreret på "<b>apv-miko-pbx</b>"-kontoen.
+<br>Hvis telefonen opretter forbindelse til PBX\'en for første gang, vil den blive registreret på "<b>apv-dzvin-pbx</b>"-kontoen.
 <br>For at konfigurere telefonen skal du ringe til "<b>%extension%</b>" fra den, hvor XXX er det interne nummer på PBX\'en.
 <br><br>
 Autokonfiguration er kun mulig for virksomhedens lokale netværk, for telefoner <b>Yealink, Snom, Fanvil</b>.',

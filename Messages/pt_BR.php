@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'Ao descrever um endereço MAC, é permitido usar o símbolo <b>%</b> - que significa “qualquer conjunto de caracteres” <br>
 O modelo <b>805e0c67%</b> corresponderá a <b>805e0c670001</b> e <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>Atenção!</b> Todos os URIs são construídos em relação ao valor base <b>/pbxcore/api/autoprovision-http</b><br>Na descrição de um URI é permitido usar o símbolo <b>%</b> — que significa „qualquer conjunto de caracteres“.<br>O URI <b>/%/%/test.cfg</b> corresponderá a <b>/1/2/test.cfg</b> e a <b>/test/test3/test.cfg</b>',
-    'mod_Autoprovision_header' => 'Se o módulo estiver habilitado, a conta SIP "<b>apv-miko-pbx</b>" fica disponível no PBX.
+    'mod_Autoprovision_header' => 'Se o módulo estiver habilitado, a conta SIP "<b>apv-dzvin-pbx</b>" fica disponível no PBX.
 <br>Para configurar seu telefone automaticamente, você precisa redefini-lo para as configurações de fábrica.
-<br>Se o telefone se conectar ao PBX pela primeira vez, ele será registrado na conta "<b>apv-miko-pbx</b>".
+<br>Se o telefone se conectar ao PBX pela primeira vez, ele será registrado na conta "<b>apv-dzvin-pbx</b>".
 <br>Para configurar seu telefone, você precisa ligar para "<b>%extension%</b>" dele, onde XXX é o número interno do PBX.
 <br><br>
 A configuração automática é possível apenas para a rede local da empresa, para telefones <b>Yealink, Snom, Fanvil</b>.',

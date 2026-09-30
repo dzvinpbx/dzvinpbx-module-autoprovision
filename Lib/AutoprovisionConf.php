@@ -10,21 +10,21 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Lib;
 
-use MikoPBX\Common\Models\FirewallRules;
-use MikoPBX\Core\System\Configs\NginxConf;
-use MikoPBX\Core\Workers\Cron\WorkerSafeScriptsCore;
-use MikoPBX\Core\Workers\Libs\WorkerModelsEvents\Actions\ReloadFirewallAction;
-use MikoPBX\Core\Workers\Libs\WorkerModelsEvents\Actions\ReloadNginxAction;
-use MikoPBX\Core\Workers\WorkerModelsEvents;
-use MikoPBX\Modules\Config\ConfigClass;
-use MikoPBX\PBXCoreREST\Lib\PBXApiResult;
+use DzvinPBX\Common\Models\FirewallRules;
+use DzvinPBX\Core\System\Configs\NginxConf;
+use DzvinPBX\Core\Workers\Cron\WorkerSafeScriptsCore;
+use DzvinPBX\Core\Workers\Libs\WorkerModelsEvents\Actions\ReloadFirewallAction;
+use DzvinPBX\Core\Workers\Libs\WorkerModelsEvents\Actions\ReloadNginxAction;
+use DzvinPBX\Core\Workers\WorkerModelsEvents;
+use DzvinPBX\Modules\Config\ConfigClass;
+use DzvinPBX\PBXCoreREST\Lib\PBXApiResult;
 use Modules\ModuleAutoprovision\Lib\RestAPI\Controllers\GetController;
-use MikoPBX\Core\System\{PBX, Processes, System, Util};
+use DzvinPBX\Core\System\{PBX, Processes, System, Util};
 use Modules\ModuleAutoprovision\Models\{ModuleAutoprovision};
 
 class AutoprovisionConf extends ConfigClass
 {
-    public const SIP_USER     = 'apv-miko-pbx';
+    public const SIP_USER     = 'apv-dzvin-pbx';
     public const BASE_URI     = '/pbxcore/api/autoprovision-http';
 
     // Fallback port used when settings haven't been seeded yet (e.g. between

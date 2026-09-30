@@ -11,12 +11,12 @@ namespace Modules\ModuleAutoprovision\Lib;
 
 require_once 'Globals.php';
 
-use MikoPBX\Common\Handlers\CriticalErrorsHandler;
-use MikoPBX\Common\Models\PbxExtensionModules;
-use MikoPBX\Core\System\BeanstalkClient;
-use MikoPBX\Core\System\Processes;
-use MikoPBX\Core\System\SystemMessages;
-use MikoPBX\Core\Workers\WorkerBase;
+use DzvinPBX\Common\Handlers\CriticalErrorsHandler;
+use DzvinPBX\Common\Models\PbxExtensionModules;
+use DzvinPBX\Core\System\BeanstalkClient;
+use DzvinPBX\Core\System\Processes;
+use DzvinPBX\Core\System\SystemMessages;
+use DzvinPBX\Core\Workers\WorkerBase;
 use Modules\ModuleAutoprovision\Lib\RestAPI\Firmware\Repository as FirmwareRepository;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovision;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovisionDevice;

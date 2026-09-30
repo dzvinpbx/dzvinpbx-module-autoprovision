@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'เมื่ออธิบายที่อยู่ MAC อนุญาตให้ใช้สัญลักษณ์ <b>%</b> - หมายถึง “ชุดอักขระใดก็ได้” <br>
 เทมเพลต <b>805e0c67%</b> จะตรงกับ <b>805e0c670001</b> และ <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>โปรดทราบ!</b> URI ทุกตัวสร้างขึ้นโดยอ้างอิงค่าฐาน <b>/pbxcore/api/autoprovision-http</b><br>ในการอธิบาย URI สามารถใช้สัญลักษณ์ <b>%</b> — หมายถึง „ชุดอักขระใด ๆ“<br>URI <b>/%/%/test.cfg</b> จะตรงกับ <b>/1/2/test.cfg</b> และ <b>/test/test3/test.cfg</b>',
-    'mod_Autoprovision_header' => 'หากเปิดใช้งานโมดูล บัญชี SIP "<b>apv-miko-pbx</b>" จะพร้อมใช้งานบน PBX
+    'mod_Autoprovision_header' => 'หากเปิดใช้งานโมดูล บัญชี SIP "<b>apv-dzvin-pbx</b>" จะพร้อมใช้งานบน PBX
 <br>หากต้องการกำหนดค่าโทรศัพท์ของคุณโดยอัตโนมัติ คุณต้องรีเซ็ตเป็นการตั้งค่าจากโรงงาน
-<br>หากโทรศัพท์เชื่อมต่อกับ PBX เป็นครั้งแรก โทรศัพท์จะถูกลงทะเบียนในบัญชี "<b>apv-miko-pbx</b>"
+<br>หากโทรศัพท์เชื่อมต่อกับ PBX เป็นครั้งแรก โทรศัพท์จะถูกลงทะเบียนในบัญชี "<b>apv-dzvin-pbx</b>"
 <br>ในการตั้งค่าโทรศัพท์ของคุณ คุณต้องโทรไปที่หมายเลข “<b>%extension%</b>” จากนั้น XXX คือหมายเลขภายในของ PBX
 <br><br>
 การกำหนดค่าอัตโนมัติสามารถทำได้เฉพาะกับเครือข่ายท้องถิ่นขององค์กร สำหรับโทรศัพท์ <b>Yealink, Snom, Fanvil</b>',

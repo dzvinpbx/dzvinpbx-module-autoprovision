@@ -13,15 +13,15 @@ namespace Modules\ModuleAutoprovision\Lib;
 
 require_once 'Globals.php';
 
-use MikoPBX\Common\Handlers\CriticalErrorsHandler;
-use MikoPBX\Common\Models\PbxExtensionModules;
-use MikoPBX\Core\System\BeanstalkClient;
-use MikoPBX\Core\System\MikoPBXConfig;
-use MikoPBX\Core\System\Network;
-use MikoPBX\Core\System\Processes;
-use MikoPBX\Core\System\System;
-use MikoPBX\Core\System\SystemMessages;
-use MikoPBX\Core\Workers\WorkerBase;
+use DzvinPBX\Common\Handlers\CriticalErrorsHandler;
+use DzvinPBX\Common\Models\PbxExtensionModules;
+use DzvinPBX\Core\System\BeanstalkClient;
+use DzvinPBX\Core\System\DzvinPBXConfig;
+use DzvinPBX\Core\System\Network;
+use DzvinPBX\Core\System\Processes;
+use DzvinPBX\Core\System\System;
+use DzvinPBX\Core\System\SystemMessages;
+use DzvinPBX\Core\Workers\WorkerBase;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovision;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovisionDevice;
 
@@ -30,7 +30,7 @@ class WorkerProvisioningServerPnP extends WorkerBase
     public const BROAD_CAST_IP = '224.0.1.75';
 
     // Syslog program tag for the PnP worker. Operators can run
-    // `grep -E 'autoprovision-(pnp|http)' /storage/usbdisk1/mikopbx/log/system/messages`
+    // `grep -E 'autoprovision-(pnp|http)' /storage/usbdisk1/dzvinpbx/log/system/messages`
     // to see the full provisioning pipeline (multicast + HTTP) in one place.
     public const LOG_TAG = 'autoprovision-pnp';
     private string $url;
@@ -46,7 +46,7 @@ class WorkerProvisioningServerPnP extends WorkerBase
 
     public function getSettings($debug = false):void
     {
-        $mikoPBXConfig = new MikoPBXConfig();
+        $dzvinPBXConfig = new DzvinPBXConfig();
         $network = new Network();
 
         $data = ModuleAutoprovision::findFirst();
@@ -54,7 +54,7 @@ class WorkerProvisioningServerPnP extends WorkerBase
         // The module serves provisioning on its own nginx server-block to bypass
         // the global HTTPS redirect — see AutoprovisionConf::createNginxServers().
         $http_port         = AutoprovisionConf::getHttpPort();
-        $this->pbx_version = $mikoPBXConfig->getGeneralSettings('PBXVersion');
+        $this->pbx_version = $dzvinPBXConfig->getGeneralSettings('PBXVersion');
         $this->interfaces  = $network->getInterfacesNames();
 
         // First-run safety: settings row may not exist yet (fresh install, mid-upgrade).
@@ -190,10 +190,10 @@ class WorkerProvisioningServerPnP extends WorkerBase
             "Accept: application/url\r\n" .
             "Content-Length: 0\r\n\n";
         /*
-        $msg =  "SUBSCRIBE sip:MAC%3a{$mac}@miko.ru SIP/2.0"."\r\n".
+        $msg =  "SUBSCRIBE sip:MAC%3a{$mac}@dzvin.pp.ua SIP/2.0"."\r\n".
                 "Via: SIP/2.0/UDP {$ip}:{$port};rport"."\r\n".
-                "From: <sip:MAC%3a{$mac}@miko.ru>;tag=1145111611"."\r\n".
-                "To: <sip:MAC%3a{$mac}@miko.ru>"."\r\n".
+                "From: <sip:MAC%3a{$mac}@dzvin.pp.ua>;tag=1145111611"."\r\n".
+                "To: <sip:MAC%3a{$mac}@dzvin.pp.ua>"."\r\n".
                 'Call-ID: 1913994428@{$ip}'."\r\n".
                 'CSeq: 1 SUBSCRIBE'."\r\n".
                 'Event: ua-profile;profile-type="device";vendor="snom";model="snomD120";version="10.1.39.11"'."\r\n".
@@ -252,7 +252,7 @@ class WorkerProvisioningServerPnP extends WorkerBase
             "Contact: <sip:asterisk@$ip_pbx:$port_pbx>\r\n" .
             "Call-ID: 4afab6ce2bff0be11a4af41064340242@$ip_pbx:$port_pbx\r\n" .
             "CSeq: 102 NOTIFY\r\n" .
-            "User-Agent: mikopbx\r\n" .
+            "User-Agent: dzvinpbx\r\n" .
             "Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY, INFO, PUBLISH, MESSAGE\r\n" .
             "Supported: replaces, timer\r\n" .
             "Subscription-State: terminated\r\n" .
@@ -646,7 +646,7 @@ class WorkerProvisioningServerPnP extends WorkerBase
             "CSeq: 3 NOTIFY\r\n" .
             "Content-Type: application/url\r\n" .
             "Subscription-State: terminated;reason=timeout\r\n" .
-            "Event: ua-profile;profile-type=\"device\";vendor=\"MIKO\";model=\"$this->class_name\";version=\"$this->pbx_version\"\r\n" .
+            "Event: ua-profile;profile-type=\"device\";vendor=\"DZVIN\";model=\"$this->class_name\";version=\"$this->pbx_version\"\r\n" .
             'Content-Length: ' . strlen($provisionUrl) . "\r\n" .
             "\r\n" .
             $provisionUrl;

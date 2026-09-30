@@ -4,13 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Module Overview
 
-ModuleAutoprovision is a MikoPBX extension module for automatic IP phone provisioning. It discovers phones on the local network via PnP multicast (224.0.1.75:5060), generates vendor-specific configuration files, and delivers them over HTTP. Supported vendors: Yealink, Snom, Fanvil, Grandstream.
+ModuleAutoprovision is a DzvinPBX extension module for automatic IP phone provisioning. It discovers phones on the local network via PnP multicast (224.0.1.75:5060), generates vendor-specific configuration files, and delivers them over HTTP. Supported vendors: Yealink, Snom, Fanvil, Grandstream.
 
 ## Build Commands
 
 ### JavaScript compilation (ES6 to ES5)
 ```bash
-/Users/nb/PhpstormProjects/mikopbx/MikoPBXUtils/node_modules/.bin/babel \
+/Users/nb/PhpstormProjects/dzvinpbx/DzvinPBXUtils/node_modules/.bin/babel \
   public/assets/js/src/module-autoprovision-index.js \
   --out-dir public/assets/js/ \
   --source-maps inline \
@@ -23,7 +23,7 @@ phpstan analyse
 ```
 
 ### CI/CD
-Pushes to `master` or `develop` trigger `.github/workflows/build.yml`, which uses the shared `mikopbx/.github-workflows` extension-publish workflow (initial version: 1.62).
+Releases are built from tags in this repository.
 
 ## Architecture
 
@@ -77,46 +77,46 @@ Phones request configs via `GET /pbxcore/api/autoprovision-http/*` → `Autoprov
 ## Translations
 30 language files in `Messages/`. Key file: `en.php`. Translation keys prefixed with `module_autoprovision_` or `mod_autoprovision_`.
 
-## Diagnostics on a live MikoPBX
+## Diagnostics on a live DzvinPBX
 
-The PBX is busybox/alpine — many "standard" Linux commands are absent or behave differently. Verified against MikoPBX 2026.2.89-dev on 172.16.32.94.
+The PBX is busybox/alpine — many "standard" Linux commands are absent or behave differently. Verified against a MikoPBX 2026.2.89-dev host.
 
 ### Data layout — do not edit the wrong SQLite file
 
 Two unrelated DBs are routinely confused:
 
-- `/cf/conf/mikopbx.db` — core MikoPBX (Extensions, Users, Sip, PbxExtensionModules). The `m_ModuleAutoprovision*` tables here are **stale leftovers from older versions** and ignored at runtime.
-- `/storage/usbdisk1/mikopbx/custom_modules/ModuleAutoprovision/db/module.db` — the **live** module DB. All `m_ModuleAutoprovision*`, `m_Templates*`, `m_OtherPBX` reads/writes go here.
+- `/cf/conf/dzvinpbx.db` — core DzvinPBX (Extensions, Users, Sip, PbxExtensionModules). The `m_ModuleAutoprovision*` tables here are **stale leftovers from older versions** and ignored at runtime.
+- `/storage/usbdisk1/dzvinpbx/custom_modules/ModuleAutoprovision/db/module.db` — the **live** module DB. All `m_ModuleAutoprovision*`, `m_Templates*`, `m_OtherPBX` reads/writes go here.
 
-Phalcon's `ModuleAutoprovision::findFirst()` reads from `module.db`, so a `sqlite3 /cf/conf/mikopbx.db UPDATE ...` will appear to "work" yet have no effect. Always write via the Phalcon ORM, or hit `/storage/.../module.db` directly.
+Phalcon's `ModuleAutoprovision::findFirst()` reads from `module.db`, so a `sqlite3 /cf/conf/dzvinpbx.db UPDATE ...` will appear to "work" yet have no effect. Always write via the Phalcon ORM, or hit `/storage/.../module.db` directly.
 
 ### Logger plumbing
 
 `SystemMessages::sysLogMsg($ident, $message, $level)` does **not** use `$ident` as the syslog tag. It logs through Phalcon's logger with the message body `"$message on $ident"`, and the syslog tag ends up `php.backend[<pid>]` or `php.frontend[<pid>]`. Practical consequence:
 
 - The `LOG_TAG` constants (`autoprovision-pnp` in `WorkerProvisioningServerPnP`, `autoprovision-http` in `GetController`) appear at the end of the line, after `" on "`.
-- `grep autoprovision-pnp /storage/usbdisk1/mikopbx/log/system/messages` works (substring match in body) — that's the canonical filter.
+- `grep autoprovision-pnp /storage/usbdisk1/dzvinpbx/log/system/messages` works (substring match in body) — that's the canonical filter.
 
 ### Common diagnostic commands
 
 ```bash
 # PnP worker lifecycle and per-packet events
-grep autoprovision-pnp /storage/usbdisk1/mikopbx/log/system/messages | tail -50
+grep autoprovision-pnp /storage/usbdisk1/dzvinpbx/log/system/messages | tail -50
 
 # HTTP delivery events (incoming requests, 200/404, vendor detection)
-grep autoprovision-http /storage/usbdisk1/mikopbx/log/system/messages | tail -50
+grep autoprovision-http /storage/usbdisk1/dzvinpbx/log/system/messages | tail -50
 
 # Worker process
 ps -ef | grep WorkerProvisioningServerPnP | grep -v grep
 
-# Listening UDP ports — `ss` does NOT exist on MikoPBX, use netstat
+# Listening UDP ports — `ss` does NOT exist on DzvinPBX, use netstat
 netstat -ulnp | grep -E ':5060|:69 '
 
 # Listening TCP ports (nginx must be on 8480 for provisioning HTTP)
 netstat -ltnp | grep -E ':80|:8480|:443'
 
 # Currently active module settings (live DB)
-sqlite3 /storage/usbdisk1/mikopbx/custom_modules/ModuleAutoprovision/db/module.db \
+sqlite3 /storage/usbdisk1/dzvinpbx/custom_modules/ModuleAutoprovision/db/module.db \
   -header 'SELECT * FROM m_ModuleAutoprovision;'
 ```
 
@@ -129,7 +129,7 @@ sqlite3 /storage/usbdisk1/mikopbx/custom_modules/ModuleAutoprovision/db/module.d
 verbose = 1
 ```
 
-Update via Phalcon (raw `sqlite3 /cf/conf/mikopbx.db UPDATE ...` won't reach the worker — see "Data layout"):
+Update via Phalcon (raw `sqlite3 /cf/conf/dzvinpbx.db UPDATE ...` won't reach the worker — see "Data layout"):
 
 ```bash
 php -r '
@@ -148,7 +148,7 @@ The worker reads settings only at `start()`; restart it: `pkill -9 -f WorkerProv
 The worker ships its own client mode for end-to-end testing:
 
 ```bash
-cd /storage/usbdisk1/mikopbx/custom_modules/ModuleAutoprovision/Lib
+cd /storage/usbdisk1/dzvinpbx/custom_modules/ModuleAutoprovision/Lib
 timeout 3 php -f WorkerProvisioningServerPnP.php \
   socket_client <BIND_IP> <BIND_PORT> <MAC_NO_COLONS>
 # example:
@@ -157,7 +157,7 @@ timeout 3 php -f WorkerProvisioningServerPnP.php socket_client 172.16.32.94 5063
 
 It binds to `<BIND_IP>:<BIND_PORT>` (must be free), sends a SUBSCRIBE to `224.0.1.75:5060`, and prints the worker's `200 OK` + `NOTIFY` response on stdout. The NOTIFY body contains the URL the real phone would fetch — inspect it to confirm `{PBX_HOST}` substitution and the chosen vendor/model.
 
-Verbose logs land in `/storage/usbdisk1/mikopbx/log/system/messages` as: `packet from <ip>:<port> method=SUBSCRIBE`, then `Request provisiong from ip: ...; mac=<r_mac>`, then `NOTIFY sent to <ip>:<port> mac=<mac> vendor=<v> model=<m>`.
+Verbose logs land in `/storage/usbdisk1/dzvinpbx/log/system/messages` as: `packet from <ip>:<port> method=SUBSCRIBE`, then `Request provisiong from ip: ...; mac=<r_mac>`, then `NOTIFY sent to <ip>:<port> mac=<mac> vendor=<v> model=<m>`.
 
 Caveat: `r_mac` is obtained via `busybox arp -D <ip>` and falls back to garbage like `"in"` (from `"No match found in 4 entries"`) when ARP can't resolve the IP — common when testing from the PBX itself (its own IP isn't in its ARP table). The downstream code uses `$headers['mac']` (parsed from the SUBSCRIBE URI), not `r_mac`, so this is cosmetic log noise.
 

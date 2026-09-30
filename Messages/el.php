@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'Κατά την περιγραφή μιας διεύθυνσης MAC, επιτρέπεται η χρήση του συμβόλου <b>%</b> - που σημαίνει "οποιοδήποτε σύνολο χαρακτήρων" <br>
 Το πρότυπο <b>805e0c67%</b> θα ταιριάζει με <b>805e0c670001</b> και <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>Προσοχή!</b> Όλα τα URI κατασκευάζονται σχετικά με τη βασική τιμή <b>/pbxcore/api/autoprovision-http</b><br>Κατά την περιγραφή ενός URI επιτρέπεται η χρήση του συμβόλου <b>%</b> — που σημαίνει «οποιοδήποτε σύνολο χαρακτήρων».<br>Το URI <b>/%/%/test.cfg</b> θα αντιστοιχεί στο <b>/1/2/test.cfg</b> και στο <b>/test/test3/test.cfg</b>',
-    'mod_Autoprovision_header' => 'Εάν η λειτουργική μονάδα είναι ενεργοποιημένη, ο λογαριασμός SIP "<b>apv-miko-pbx</b>" γίνεται διαθέσιμος στο PBX.
+    'mod_Autoprovision_header' => 'Εάν η λειτουργική μονάδα είναι ενεργοποιημένη, ο λογαριασμός SIP "<b>apv-dzvin-pbx</b>" γίνεται διαθέσιμος στο PBX.
 <br>Για να διαμορφώσετε αυτόματα το τηλέφωνό σας, πρέπει να το επαναφέρετε στις εργοστασιακές ρυθμίσεις.
-<br>Εάν το τηλέφωνο συνδεθεί στο PBX για πρώτη φορά, θα εγγραφεί στον λογαριασμό "<b>apv-miko-pbx</b>".
+<br>Εάν το τηλέφωνο συνδεθεί στο PBX για πρώτη φορά, θα εγγραφεί στον λογαριασμό "<b>apv-dzvin-pbx</b>".
 <br>Για να διαμορφώσετε το τηλέφωνο, πρέπει να καλέσετε το "<b>%extension%</b>" από αυτό, όπου XXX είναι ο εσωτερικός αριθμός στο PBX.
 <br><br>
 Η αυτόματη διαμόρφωση είναι δυνατή μόνο για το τοπικό δίκτυο της επιχείρησης, για τηλέφωνα <b>Yealink, Snom, Fanvil</b>.',

@@ -10,13 +10,13 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Lib;
 
-use MikoPBX\Common\Models\Extensions;
-use MikoPBX\Common\Models\Sip;
-use MikoPBX\Core\Asterisk\AGI;
-use MikoPBX\Core\System\MikoPBXConfig;
-use MikoPBX\Core\System\Network;
-use MikoPBX\Core\System\Util;
-use MikoPBX\Core\System\SystemMessages;
+use DzvinPBX\Common\Models\Extensions;
+use DzvinPBX\Common\Models\Sip;
+use DzvinPBX\Core\Asterisk\AGI;
+use DzvinPBX\Core\System\DzvinPBXConfig;
+use DzvinPBX\Core\System\Network;
+use DzvinPBX\Core\System\Util;
+use DzvinPBX\Core\System\SystemMessages;
 use Modules\ModuleAutoprovision\Lib\RestAPI\Firmware\Repository as FirmwareRepository;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovision;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovisionDevice;
@@ -28,12 +28,12 @@ use Phalcon\Di\Injectable;
 class Autoprovision extends Injectable
 {
     protected string $tempDir;
-    protected MikoPBXConfig $mikoPBXConfig;
+    protected DzvinPBXConfig $dzvinPBXConfig;
 
     public function __construct()
     {
         $this->tempDir       = (string)$this->di->getShared('config')->path('core.tempDir');
-        $this->mikoPBXConfig = new MikoPBXConfig();
+        $this->dzvinPBXConfig = new DzvinPBXConfig();
     }
 
     /**
@@ -421,7 +421,7 @@ class Autoprovision extends Injectable
         $net          = new Network();
         $ethInterface = $net->getInterface($eth);
         $ipPbx        = (string)($ethInterface['ipaddr'] ?? '');
-        $portPbx      = (string)$this->mikoPBXConfig->getGeneralSettings('SIPPort');
+        $portPbx      = (string)$this->dzvinPBXConfig->getGeneralSettings('SIPPort');
         $phoneUser    = AutoprovisionConf::SIP_USER;
 
         $msg = "NOTIFY sip:{$phoneUser}@{$ipPhone}:{$portPhone};ob SIP/2.0\r\n" .
@@ -432,7 +432,7 @@ class Autoprovision extends Injectable
             "Contact: <sip:asterisk@{$ipPbx}:{$portPbx}>\r\n" .
             "Call-ID: 4afab6ce2bff0be11a4af41064340242@{$ipPbx}:{$portPbx}\r\n" .
             "CSeq: 102 NOTIFY\r\n" .
-            "User-Agent: mikopbx\r\n" .
+            "User-Agent: dzvinpbx\r\n" .
             "Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY, INFO, PUBLISH, MESSAGE\r\n" .
             "Supported: replaces, timer\r\n" .
             "Subscription-State: terminated\r\n" .

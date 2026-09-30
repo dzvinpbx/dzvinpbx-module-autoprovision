@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => '描述 MAC 地址时，允许使用符号 <b>%</b> - 意思是“任何字符集”<br>
 模式 <b>805e0c67%</b> 将匹配 <b>805e0c670001</b> 和 <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>注意！</b> 所有 URI 都基于基础值 <b>/pbxcore/api/autoprovision-http</b> 构建<br>在描述 URI 时可以使用符号 <b>%</b> — 表示「任意字符序列」。<br>URI <b>/%/%/test.cfg</b> 将匹配 <b>/1/2/test.cfg</b> 和 <b>/test/test3/test.cfg</b>',
-    'mod_Autoprovision_header' => '如果启用该模块，SIP 帐户“<b>apv-miko-pbx</b>”将在 PBX 上可用。
+    'mod_Autoprovision_header' => '如果启用该模块，SIP 帐户“<b>apv-dzvin-pbx</b>”将在 PBX 上可用。
 <br>要自动配置您的手机，您需要将其重置为出厂设置。
-<br>如果话机第一次连接PBX，会注册到“<b>apv-miko-pbx</b>”账户。
+<br>如果话机第一次连接PBX，会注册到“<b>apv-dzvin-pbx</b>”账户。
 <br>要配置电话，您需要从电话呼叫“<b>%extension%</b>”，其中 XXX 是 PBX 上的内部号码。
 <br><br>
 自动配置仅适用于企业本地网络，电话<b>Yealink、Snom、Fanvil</b>。',

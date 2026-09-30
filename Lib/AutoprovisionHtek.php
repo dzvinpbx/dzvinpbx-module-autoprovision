@@ -33,13 +33,13 @@ class AutoprovisionHtek extends Autoprovision implements ConfManager
 
         $filename = "{$this->tempDir}/cfg{$req_data['mac']}.cfg";
 
-        $sipPort            = $this->mikoPBXConfig->getGeneralSettings('SIPPort');
-        $voiceMailExtension = $this->mikoPBXConfig->getGeneralSettings('VoicemailExten');
+        $sipPort            = $this->dzvinPBXConfig->getGeneralSettings('SIPPort');
+        $voiceMailExtension = $this->dzvinPBXConfig->getGeneralSettings('VoicemailExten');
 
         $cfg = "#!version:1.0.0.1\r\n";
         foreach ($sip_peers as $line => $sipPeer) {
             $cfg .= "account.{$line}.active = 1\r\n";
-            $cfg .= "account.{$line}.label = MikoPBX ({$sipPeer['extension']})\r\n";
+            $cfg .= "account.{$line}.label = DzvinPBX ({$sipPeer['extension']})\r\n";
             $cfg .= "account.{$line}.display_name = {$sipPeer['callerid']}\r\n";
             $cfg .= "account.{$line}.auth_name = {$sipPeer['extension']}\r\n";
             $cfg .= "account.{$line}.user_name = {$sipPeer['extension']}\r\n";
@@ -62,7 +62,7 @@ class AutoprovisionHtek extends Autoprovision implements ConfManager
         $cfg .= "features.intercom.mute = 0\r\n";
         $cfg .= "features.intercom.tone = 1\r\n";
 
-        $featureAttendedTransfer = $this->mikoPBXConfig->getGeneralSettings('PBXFeatureAttendedTransfer');
+        $featureAttendedTransfer = $this->dzvinPBXConfig->getGeneralSettings('PBXFeatureAttendedTransfer');
         $cfg .= "features.dtmf.transfer = {$featureAttendedTransfer}\r\n";
 
         // Htek auto-image URL — the Htek firmware server config key.

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'При описі MAC адреси допускається використовувати символ <b>%</b> - що означає "будь-який набір символів" <br>
 Шаблон <b>805e0c67%</b> буде відповідати <b>805e0c670001</b> та <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>Увага!</b> Усі URI будуються відносно базового значення <b>/pbxcore/api/autoprovision-http</b><br>В описі URI допускається використання символу <b>%</b> — означає „будь-який набір символів“.<br>URI <b>/%/%/test.cfg</b> відповідатиме <b>/1/2/test.cfg</b> та <b>/test/test3/test.cfg</b>',
-    'mod_Autoprovision_header' => 'Якщо модуль увімкнено, то на АТС стає доступний обліковий запис SIP "apv-miko-pbx</b>".
+    'mod_Autoprovision_header' => 'Якщо модуль увімкнено, то на АТС стає доступний обліковий запис SIP "apv-dzvin-pbx</b>".
 <br>Для автоматичного налаштування телефону необхідно скинути його до заводських налаштувань.
-<br>Якщо телефон підключається до АТС вперше, то він буде зареєстрований на обліковому записі "apv-miko-pbx".
+<br>Якщо телефон підключається до АТС вперше, то він буде зареєстрований на обліковому записі "apv-dzvin-pbx".
 <br>Для налаштування телефону необхідно з нього зателефонувати на номер "<b>%extension%</b>", де XXX - це внутрішній номер на АТС.
 <br><br>
 Автоналаштування можливе лише для локальної мережі підприємства, для телефонів <b>Yealink, Snom, Fanvil</b>.',

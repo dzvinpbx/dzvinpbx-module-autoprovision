@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'Kada se opisuje MAC adresa, dopušteno je koristiti simbol <b>%</b> - što znači "bilo koji skup znakova" <br>
 Uzorak <b>805e0c67%</b> odgovarat će <b>805e0c670001</b> i <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>Pažnja!</b> Svi URI-ji grade se relativno prema osnovnoj vrijednosti <b>/pbxcore/api/autoprovision-http</b><br>Pri opisu URI-ja dopušteno je koristiti simbol <b>%</b> — što znači „bilo koji skup znakova“.<br>URI <b>/%/%/test.cfg</b> odgovarat će <b>/1/2/test.cfg</b> i <b>/test/test3/test.cfg</b>',
-    'mod_Autoprovision_header' => 'Ako je modul omogućen, SIP račun "<b>apv-miko-pbx</b>" postaje dostupan na PBX-u
+    'mod_Autoprovision_header' => 'Ako je modul omogućen, SIP račun "<b>apv-dzvin-pbx</b>" postaje dostupan na PBX-u
 <br>Da biste automatski konfigurirali svoj telefon, morate ga vratiti na tvorničke postavke.
-<br>Ako se telefon prvi put spaja na PBX, bit će registriran na računu "<b>apv-miko-pbx</b>".
+<br>Ako se telefon prvi put spaja na PBX, bit će registriran na računu "<b>apv-dzvin-pbx</b>".
 <br>Da biste postavili svoj telefon, morate s njega nazvati broj “<b>%extension%</b>”, gdje je XXX interni broj na PBX-u.
 <br><br>
 Automatska konfiguracija moguća je samo za lokalnu mrežu poduzeća, za telefone <b>Yealink, Snom, Fanvil</b>.',

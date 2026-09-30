@@ -26,9 +26,9 @@ return [
     'mod_Autoprovision_additional_params' => 'Additional settings',
     'mod_Autoprovision_tftp_enabled' => 'Enable TFTP provisioning (UDP/69)',
     'mod_Autoprovision_tftp_enabled_hint' => 'Starts a pure-PHP TFTP server on UDP/69 that delivers the same per-MAC vendor config as the HTTP channel, plus any firmware blob from the Firmware tab.<br>Useful when multicast PnP is blocked (most office WiFi, routed networks) or when a phone prefers DHCP option 66 over multicast (Snom, some Fanvil firmwares).<br>No extra binaries — runs inside the module worker. <b>Plain-text protocol</b>: only enable on a trusted LAN. The firewall rule for UDP/69 is opened automatically.',
-    'mod_Autoprovision_header' => 'If the module is enabled, the SIP account "<b>apv-miko-pbx</b>" becomes available on the PBX.
+    'mod_Autoprovision_header' => 'If the module is enabled, the SIP account "<b>apv-dzvin-pbx</b>" becomes available on the PBX.
 <br>To automatically configure your phone, you need to reset it to factory settings.
-<br>If the phone connects to the PBX for the first time, it will be registered to the "<b>apv-miko-pbx</b>" account.
+<br>If the phone connects to the PBX for the first time, it will be registered to the "<b>apv-dzvin-pbx</b>" account.
 <br>To configure the phone, you need to call "<b>%extension%</b>" from it, where XXX is the internal number on the PBX.
 <br><br>
 Autoconfiguration is possible only for the local network of the enterprise, for phones <b>Yealink, Snom, Fanvil</b>.',

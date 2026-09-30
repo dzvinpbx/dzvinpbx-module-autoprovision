@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'A MAC-cím leírásakor megengedett a <b>%</b> szimbólum használata – ez „bármely karakterkészlet” <br>
 A <b>805e0c67%</b> sablon egyezik a következővel: <b>805e0c670001</b> és <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>Figyelem!</b> Minden URI a <b>/pbxcore/api/autoprovision-http</b> alapérték relatívan épül fel<br>URI leírásakor használható a <b>%</b> szimbólum — „tetszőleges karaktersorozatot“ jelent.<br>A <b>/%/%/test.cfg</b> URI illeszkedik a <b>/1/2/test.cfg</b> és a <b>/test/test3/test.cfg</b> címekre',
-    'mod_Autoprovision_header' => 'Ha a modul engedélyezve van, az "<b>apv-miko-pbx</b>" SIP-fiók elérhetővé válik az alközponton
+    'mod_Autoprovision_header' => 'Ha a modul engedélyezve van, az "<b>apv-dzvin-pbx</b>" SIP-fiók elérhetővé válik az alközponton
 <br>A telefon automatikus konfigurálásához vissza kell állítania a gyári beállításokat.
-<br>Ha a telefon először csatlakozik az alközponthoz, akkor az „<b>apv-miko-pbx</b>” fiókban lesz regisztrálva.
+<br>Ha a telefon először csatlakozik az alközponthoz, akkor az „<b>apv-dzvin-pbx</b>” fiókban lesz regisztrálva.
 <br>A telefon konfigurálásához fel kell hívnia a „<b>%extension%</b>” számot, ahol az XXX az alközpont belső száma.
 <br><br>
 Az automatikus konfigurálás csak a vállalati helyi hálózaton, a <b>Yealink, Snom, Fanvil</b> telefonokon lehetséges.',

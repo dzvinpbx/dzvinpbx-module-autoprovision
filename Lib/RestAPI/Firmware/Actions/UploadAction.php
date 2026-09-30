@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Lib\RestAPI\Firmware\Actions;
 
-use MikoPBX\Core\System\SystemMessages;
-use MikoPBX\PBXCoreREST\Lib\PBXApiResult;
+use DzvinPBX\Core\System\SystemMessages;
+use DzvinPBX\PBXCoreREST\Lib\PBXApiResult;
 use Modules\ModuleAutoprovision\Lib\RestAPI\Firmware\Repository;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovisionFirmware;
 
@@ -19,7 +19,7 @@ use Modules\ModuleAutoprovision\Models\ModuleAutoprovisionFirmware;
  * chunked /pbxcore/api/v3/files:upload endpoint (category=autoprovision-firmware).
  *
  * Why no multipart handler here: Core already does Resumable.js chunking, hash
- * checks, and the temp file lookup at /storage/usbdisk1/mikopbx/tmp/www_cache/
+ * checks, and the temp file lookup at /storage/usbdisk1/dzvinpbx/tmp/www_cache/
  * upload_cache/<file_id>/. We just sanity-check the resulting blob, hash it,
  * and move it into <moduleDir>/firmware/<vendor>/<filename>.
  *
@@ -30,7 +30,7 @@ use Modules\ModuleAutoprovision\Models\ModuleAutoprovisionFirmware;
  */
 class UploadAction
 {
-    private const UPLOAD_CACHE = '/storage/usbdisk1/mikopbx/tmp/www_cache/upload_cache/';
+    private const UPLOAD_CACHE = '/storage/usbdisk1/dzvinpbx/tmp/www_cache/upload_cache/';
 
     public static function main(array $data): PBXApiResult
     {

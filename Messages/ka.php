@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'MAC მისამართის აღწერისას ნებადართულია სიმბოლო <b>%</b> - რაც ნიშნავს "ნებისმიერი სიმბოლოების კომპლექტს" <br>
 შაბლონი <b>805e0c67%</b> დაემთხვევა <b>805e0c670001</b> და <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>ყურადღება!</b> ყველა URI იქმნება საბაზო მნიშვნელობასთან <b>/pbxcore/api/autoprovision-http</b> შედარებით<br>URI-ის აღწერისას შესაძლებელია სიმბოლოს <b>%</b> გამოყენება — ნიშნავს „ნებისმიერ სიმბოლოთა ნაკრებს“.<br>URI <b>/%/%/test.cfg</b> შეესაბამება <b>/1/2/test.cfg</b>-სა და <b>/test/test3/test.cfg</b>-ს',
-    'mod_Autoprovision_header' => 'თუ მოდული ჩართულია, SIP ანგარიში "<b>apv-miko-pbx</b>" ხელმისაწვდომი გახდება PBX-ზე.
+    'mod_Autoprovision_header' => 'თუ მოდული ჩართულია, SIP ანგარიში "<b>apv-dzvin-pbx</b>" ხელმისაწვდომი გახდება PBX-ზე.
 <br>თქვენი ტელეფონის ავტომატურად კონფიგურაციისთვის, თქვენ უნდა დააბრუნოთ ის ქარხნულ პარამეტრებზე.
-<br>თუ ტელეფონი პირველად დაუკავშირდება PBX-ს, ის დარეგისტრირდება "<b>apv-miko-pbx</b>" ანგარიშზე.
+<br>თუ ტელეფონი პირველად დაუკავშირდება PBX-ს, ის დარეგისტრირდება "<b>apv-dzvin-pbx</b>" ანგარიშზე.
 <br>ტელეფონის კონფიგურაციისთვის, თქვენ უნდა დარეკოთ მისგან "<b>%extension%</b>", სადაც XXX არის PBX-ის შიდა ნომერი.
 <br><br>
 ავტოკონფიგურაცია შესაძლებელია მხოლოდ საწარმოს ლოკალური ქსელისთვის, ტელეფონებისთვის <b>Yealink, Snom, Fanvil</b>.',

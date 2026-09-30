@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Models;
 
-use MikoPBX\Modules\Models\ModulesModelsBase;
+use DzvinPBX\Modules\Models\ModulesModelsBase;
 
 /**
  * A peer PBX whose phonebook this PBX should fetch and merge into its own.

@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Lib\RestAPI\Firmware;
 
-use MikoPBX\PBXCoreREST\Attributes\{ApiResource,
+use DzvinPBX\PBXCoreREST\Attributes\{ApiResource,
     ApiOperation,
     ApiParameterRef,
     ApiResponse,
@@ -17,8 +17,8 @@ use MikoPBX\PBXCoreREST\Attributes\{ApiResource,
     HttpMapping,
     SecurityType,
     ResourceSecurity};
-use MikoPBX\PBXCoreREST\Controllers\BaseRestController;
-use MikoPBX\PBXCoreREST\Lib\Common\CommonDataStructure;
+use DzvinPBX\PBXCoreREST\Controllers\BaseRestController;
+use DzvinPBX\PBXCoreREST\Lib\Common\CommonDataStructure;
 
 /**
  * Firmware repository — HTTP CRUD for phone-firmware blobs that the module

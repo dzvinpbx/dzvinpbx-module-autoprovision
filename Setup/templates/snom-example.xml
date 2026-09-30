@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- MikoPBX Autoprovision — Snom example template.
+<!-- DzvinPBX Autoprovision — Snom example template.
      Placeholders {SIP_NUM}, {SIP_USER_NAME}, {SIP_PASS} substituted per device. -->
 <settings>
     <phone-settings>

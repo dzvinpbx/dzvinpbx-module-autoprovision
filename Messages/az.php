@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'MAC ünvanını təsvir edərkən <b>%</b> simvolundan istifadə etməyə icazə verilir - "hər hansı bir simvol dəsti" mənasını verir <br>
 <b>805e0c67%</b> şablonu <b>805e0c670001</b> və <b>805e0c670002</b> ilə uyğunlaşacaq',
     'mod_Autoprovision_templates_uri_header' => '<b>Diqqət!</b> Bütün URI-lər <b>/pbxcore/api/autoprovision-http</b> əsas dəyərinə görə qurulur<br>URI təsvirində <b>%</b> simvolu — «istənilən simvol dəsti» mənasını verir — istifadə oluna bilər.<br><b>/%/%/test.cfg</b> URI-si <b>/1/2/test.cfg</b> və <b>/test/test3/test.cfg</b> ilə uyğunlaşır',
-    'mod_Autoprovision_header' => 'Modul işə salındıqda, "<b>apv-miko-pbx</b>" SIP hesabı ATS-də əlçatan olur.
+    'mod_Autoprovision_header' => 'Modul işə salındıqda, "<b>apv-dzvin-pbx</b>" SIP hesabı ATS-də əlçatan olur.
 <br>Telefonunuzu avtomatik konfiqurasiya etmək üçün onu zavod parametrlərinə sıfırlamalısınız.
-<br>Əgər telefon ilk dəfə PBX-ə qoşularsa, o, "<b>apv-miko-pbx</b>" hesabına qeydiyyatdan keçəcək.
+<br>Əgər telefon ilk dəfə PBX-ə qoşularsa, o, "<b>apv-dzvin-pbx</b>" hesabına qeydiyyatdan keçəcək.
 <br>Telefonu konfiqurasiya etmək üçün siz ondan "<b>%extension%</b>" zəng etməlisiniz, burada XXX PBX-də daxili nömrədir.
 <br><br>
 Avtokonfiqurasiya yalnız müəssisənin yerli şəbəkəsi, <b>Yealink, Snom, Fanvil</b> telefonları üçün mümkündür.',

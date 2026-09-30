@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Models;
 
-use MikoPBX\Modules\Models\ModulesModelsBase;
+use DzvinPBX\Modules\Models\ModulesModelsBase;
 
 /**
  * Per-user/per-MAC binding to a provisioning template.

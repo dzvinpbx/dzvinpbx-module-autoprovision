@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright (C) 2017-2022 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'Bir MAC adresini tanımlarken, "herhangi bir karakter kümesi" anlamına gelen <b>%</b> sembolünün kullanılmasına izin verilir <br>
 <b>805e0c67%</b> şablonu <b>805e0c670001</b> ve <b>805e0c670002</b> ile eşleşecek',
     'mod_Autoprovision_templates_uri_header' => '<b>Dikkat!</b> Tüm URI\'ler <b>/pbxcore/api/autoprovision-http</b> temel değerine göre oluşturulur<br>URI tanımlanırken <b>%</b> sembolü kullanılabilir — „herhangi bir karakter dizisi“ anlamına gelir.<br><b>/%/%/test.cfg</b> URI\'si <b>/1/2/test.cfg</b> ve <b>/test/test3/test.cfg</b> ile eşleşir',
-    'mod_Autoprovision_header' => 'Modül etkinleştirilirse "<b>apv-miko-pbx</b>" SIP hesabı PBX\'te kullanılabilir hale gelir.
+    'mod_Autoprovision_header' => 'Modül etkinleştirilirse "<b>apv-dzvin-pbx</b>" SIP hesabı PBX\'te kullanılabilir hale gelir.
 <br>Telefonunuzu otomatik olarak yapılandırmak için fabrika ayarlarına sıfırlamanız gerekir.
-<br>Telefon PBX\'e ilk kez bağlanıyorsa "<b>apv-miko-pbx</b>" hesabına kaydedilecektir.
+<br>Telefon PBX\'e ilk kez bağlanıyorsa "<b>apv-dzvin-pbx</b>" hesabına kaydedilecektir.
 <br>Telefonu yapılandırmak için "<b>%extension%</b>" telefonunu aramanız gerekir; burada XXX, PBX\'teki dahili numaradır.
 <br><br>
 Otomatik yapılandırma yalnızca işletmenin yerel ağı için, <b>Yealink, Snom, Fanvil</b> telefonları için mümkündür.',

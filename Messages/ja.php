@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'MAC アドレスを記述するときは、「任意の文字セット」を意味する記号 <b>%</b> を使用できます。 <br>
 テンプレート <b>805e0c67%</b> は <b>805e0c670001</b> と <b>805e0c670002</b> に一致します。',
     'mod_Autoprovision_templates_uri_header' => '<b>注意！</b> すべての URI は基本値 <b>/pbxcore/api/autoprovision-http</b> に対する相対パスとして構築されます<br>URI の記述では記号 <b>%</b> を使用できます — これは「任意の文字列」を意味します。<br>URI <b>/%/%/test.cfg</b> は <b>/1/2/test.cfg</b> および <b>/test/test3/test.cfg</b> に一致します',
-    'mod_Autoprovision_header' => 'モジュールが有効になっている場合、SIP アカウント「<b>apv-miko-pbx</b>」が PBX で使用できるようになります。
+    'mod_Autoprovision_header' => 'モジュールが有効になっている場合、SIP アカウント「<b>apv-dzvin-pbx</b>」が PBX で使用できるようになります。
 <br>携帯電話を自動的に設定するには、携帯電話を工場出荷時の設定にリセットする必要があります。
-<br>電話機が初めて PBX に接続すると、「<b>apv-miko-pbx</b>」アカウントに登録されます。
+<br>電話機が初めて PBX に接続すると、「<b>apv-dzvin-pbx</b>」アカウントに登録されます。
 <br>電話を設定するには、そこから「<b>%extension%</b>」に電話する必要があります。XXX は PBX の内部番号です。
 <br><br>
 自動構成は、企業のローカル ネットワーク、電話機<b>Yealink、Snom、Fanvil</b> でのみ可能です。',

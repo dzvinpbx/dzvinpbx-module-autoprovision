@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Models;
 
-use MikoPBX\Common\Models\Extensions;
-use MikoPBX\Modules\Models\ModulesModelsBase;
+use DzvinPBX\Common\Models\Extensions;
+use DzvinPBX\Modules\Models\ModulesModelsBase;
 use Phalcon\Mvc\Model\Relation;
 
 class ModuleAutoprovisionBLF extends ModulesModelsBase
@@ -55,7 +55,7 @@ class ModuleAutoprovisionBLF extends ModulesModelsBase
 
     /**
      * Returns dynamic relations between module models and common models
-     * MikoPBX check it in ModelsBase after every call to keep data consistent
+     * DzvinPBX check it in ModelsBase after every call to keep data consistent
      *
      * There is example to describe the relation between Providers and ModuleTemplate models
      *

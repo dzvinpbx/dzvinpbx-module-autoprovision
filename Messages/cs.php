@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'Při popisu MAC adresy je povoleno používat symbol <b>%</b> – což znamená „jakákoli sada znaků“ <br>
 Šablona <b>805e0c67 %</b> bude odpovídat <b>805e0c670001</b> a <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>Pozor!</b> Všechny URI se vytvářejí relativně k základní hodnotě <b>/pbxcore/api/autoprovision-http</b><br>Při popisu URI lze použít symbol <b>%</b> — znamená „libovolnou sadu znaků“.<br>URI <b>/%/%/test.cfg</b> bude odpovídat <b>/1/2/test.cfg</b> i <b>/test/test3/test.cfg</b>',
-    'mod_Autoprovision_header' => 'Pokud je modul povolen, zpřístupní se na ústředně SIP účet "<b>apv-miko-pbx</b>".
+    'mod_Autoprovision_header' => 'Pokud je modul povolen, zpřístupní se na ústředně SIP účet "<b>apv-dzvin-pbx</b>".
 <br>Chcete-li telefon automaticky nakonfigurovat, musíte jej resetovat do továrního nastavení.
-<br>Pokud se telefon připojí k ústředně poprvé, bude zaregistrován k účtu "<b>apv-miko-pbx</b>".
+<br>Pokud se telefon připojí k ústředně poprvé, bude zaregistrován k účtu "<b>apv-dzvin-pbx</b>".
 <br>Pro konfiguraci telefonu z něj musíte zavolat na "<b>%extension%</b>", kde XXX je interní číslo ústředny.
 <br><br>
 Automatická konfigurace je možná pouze pro lokální síť podniku, pro telefony <b>Yealink, Snom, Fanvil</b>.',

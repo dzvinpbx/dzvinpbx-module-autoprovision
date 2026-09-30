@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Lib\RestAPI\Firmware;
 
-use MikoPBX\Modules\PbxExtensionUtils;
+use DzvinPBX\Modules\PbxExtensionUtils;
 use Modules\ModuleAutoprovision\Lib\AutoprovisionConf;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovision;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovisionFirmware;
@@ -60,7 +60,7 @@ final class Repository
     }
 
     /**
-     * Defensive mkdir — the module dir may move between MikoPBX upgrades.
+     * Defensive mkdir — the module dir may move between DzvinPBX upgrades.
      */
     public static function ensureBaseDir(): void
     {

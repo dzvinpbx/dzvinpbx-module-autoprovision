@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Models;
 
-use MikoPBX\Modules\Models\ModulesModelsBase;
+use DzvinPBX\Modules\Models\ModulesModelsBase;
 
 /**
  * Firmware blob registered with the module's HTTP/TFTP firmware repository.

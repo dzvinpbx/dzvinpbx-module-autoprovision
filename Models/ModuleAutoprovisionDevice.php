@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Models;
 
-use MikoPBX\Modules\Models\ModulesModelsBase;
+use DzvinPBX\Modules\Models\ModulesModelsBase;
 use Phalcon\Mvc\Model\Relation;
 
 class ModuleAutoprovisionDevice extends ModulesModelsBase

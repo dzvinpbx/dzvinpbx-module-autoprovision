@@ -1,5 +1,5 @@
 {
-  "name": "mikopbx/moduleautoprovision",
+  "name": "dzvinpbx/moduleautoprovision",
   "description": "ModuleAutoprovision",
   "require": {
     "php": "^8.4"
@@ -14,7 +14,7 @@
     "pbx",
     "asterisk",
     "freepbx",
-    "mikopbx",
+    "dzvinpbx",
     "sip",
     "voip",
     "phalcon",
@@ -23,33 +23,23 @@
     "autoprovision"
   ],
   "license": "GPL-3.0-or-later",
-  "homepage": "https://github.com/mikopbx/ModuleAutoprovision",
+  "homepage": "https://github.com/dzvinpbx/dzvinpbx-module-autoprovision",
   "support": {
-    "email": "help@mikopbx.com",
-    "wiki": "https://wiki.mikopbx.com",
-    "issues": "https://github.com/mikopbx/Core/issues",
-    "source": "https://github.com/mikopbx/Core",
-    "forum": "https://qa.mikopbx.ru",
-    "chat": "https://t.me/mikopbx_dev"
+    "issues": "https://github.com/dzvinpbx/dzvinpbx-module-autoprovision/issues",
+    "source": "https://github.com/dzvinpbx/dzvinpbx-module-autoprovision"
   },
   "authors": [
     {
       "name": "Alexey Portnov",
       "email": "apor@miko.ru",
       "homepage": "https://www.facebook.com/PortnovAlexey",
-      "role": "Developer"
+      "role": "Developer (upstream MikoPBX ModuleAutoprovision)"
     },
     {
       "name": "Nikolay Beketov",
       "email": "nbek@miko.ru",
       "homepage": "https://www.linkedin.com/in/nikolay-beketov",
-      "role": "Developer"
-    }
-  ],
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/mikopbx"
+      "role": "Developer (upstream MikoPBX ModuleAutoprovision)"
     }
   ],
   "config": {

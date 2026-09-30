@@ -10,10 +10,10 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\App\Controllers;
 
-use MikoPBX\AdminCabinet\Controllers\BaseController;
-use MikoPBX\AdminCabinet\Providers\AssetProvider;
-use MikoPBX\Common\Models\Extensions;
-use MikoPBX\Modules\PbxExtensionUtils;
+use DzvinPBX\AdminCabinet\Controllers\BaseController;
+use DzvinPBX\AdminCabinet\Providers\AssetProvider;
+use DzvinPBX\Common\Models\Extensions;
+use DzvinPBX\Modules\PbxExtensionUtils;
 use Phalcon\Tag;
 use Modules\ModuleAutoprovision\App\Forms\ModuleAutoprovisionForm;
 use Modules\ModuleAutoprovision\Lib\AutoprovisionConf;
@@ -65,7 +65,7 @@ class ModuleAutoprovisionController extends BaseController
         $headerCss = $this->assets->collection(AssetProvider::HEADER_CSS);
         $headerCss->addCss('css/cache/' . self::MODULE_UNIQUE_ID . '/module-autoprovision.css', true);
 
-        // Semantic UI's modal module is not part of MikoPBX's default bundle — the
+        // Semantic UI's modal module is not part of DzvinPBX's default bundle — the
         // template-editor on the Templates tab relies on $.fn.modal, so we pull it in here.
         $this->assets->collection(AssetProvider::SEMANTIC_UI_CSS)
             ->addCss('css/vendor/semantic/modal.min.css', true);
@@ -212,7 +212,7 @@ class ModuleAutoprovisionController extends BaseController
         // `BreadcrumbModuleAutoprovisionload-example-templates`. Re-use the index
         // breadcrumb so AJAX clients that surface the title (or curl debug runs)
         // see the same label as the parent page.
-        Tag::setTitle('MikoPBX|' . $this->translation->_('BreadcrumbModuleAutoprovision'));
+        Tag::setTitle('DzvinPBX|' . $this->translation->_('BreadcrumbModuleAutoprovision'));
 
         if (!$this->request->isPost()) {
             $this->view->success = false;

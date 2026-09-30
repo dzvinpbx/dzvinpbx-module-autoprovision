@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,12 +21,12 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Setup;
 
-use MikoPBX\Common\Models\Extensions;
-use MikoPBX\Common\Models\PbxSettings;
-use MikoPBX\Core\System\Processes;
-use MikoPBX\Core\System\Util;
-use MikoPBX\Core\System\SystemMessages;
-use MikoPBX\Modules\Setup\PbxExtensionSetupBase;
+use DzvinPBX\Common\Models\Extensions;
+use DzvinPBX\Common\Models\PbxSettings;
+use DzvinPBX\Core\System\Processes;
+use DzvinPBX\Core\System\Util;
+use DzvinPBX\Core\System\SystemMessages;
+use DzvinPBX\Modules\Setup\PbxExtensionSetupBase;
 use Modules\ModuleAutoprovision\Lib\TemplateSeeder;
 use Modules\ModuleAutoprovision\Models\ModuleAutoprovision;
 use Modules\ModuleAutoprovision\Models\Templates;
@@ -156,7 +156,7 @@ class PbxExtensionSetup extends PbxExtensionSetupBase
         if (!is_dir($dbDir)) {
             return;
         }
-        // Match the rest of the MikoPBX file tree: www:www, 0660 for files,
+        // Match the rest of the DzvinPBX file tree: www:www, 0660 for files,
         // 0770 for the dir so PHP can also create the WAL/SHM sidecar files.
         Processes::mwExec('chown -R www:www ' . escapeshellarg($dbDir));
         Processes::mwExec('chmod 0770 ' . escapeshellarg($dbDir));
@@ -166,7 +166,7 @@ class PbxExtensionSetup extends PbxExtensionSetupBase
     /**
      * Creates the firmware repository under <moduleDir>/firmware/<vendor>/.
      *
-     * Module dir can move between MikoPBX versions (USB key reseat, factory reset),
+     * Module dir can move between DzvinPBX versions (USB key reseat, factory reset),
      * so the upload action also re-creates the dir on every call as a cheap defence.
      */
     private function ensureFirmwareDir(): void

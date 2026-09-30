@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 /*
- * MikoPBX - free phone system for small business
+ * Dzvin PBX - free phone system for small business
  * Copyright © 2017-2024 Alexey Portnov and Nikolay Beketov
  *
  * This program is free software: you can redistribute it and/or modify
@@ -67,9 +67,9 @@ return [
     'mod_Autoprovision_templates_users_header' => 'Când descrieți o adresă MAC, este permisă utilizarea simbolului <b>%</b> - adică „orice set de caractere” <br>
 Șablonul <b>805e0c67%</b> se va potrivi cu <b>805e0c670001</b> și <b>805e0c670002</b>',
     'mod_Autoprovision_templates_uri_header' => '<b>Atenție!</b> Toate URI-urile sunt construite relativ la valoarea de bază <b>/pbxcore/api/autoprovision-http</b><br>La descrierea unui URI se poate folosi simbolul <b>%</b> — însemnând „orice set de caractere“.<br>URI-ul <b>/%/%/test.cfg</b> va corespunde cu <b>/1/2/test.cfg</b> și cu <b>/test/test3/test.cfg</b>',
-    'mod_Autoprovision_header' => 'Dacă modulul este activat, contul SIP „<b>apv-miko-pbx</b>” devine disponibil pe PBX.
+    'mod_Autoprovision_header' => 'Dacă modulul este activat, contul SIP „<b>apv-dzvin-pbx</b>” devine disponibil pe PBX.
 <br>Pentru a configura automat telefonul, trebuie să-l resetați la setările din fabrică.
-<br>Dacă telefonul se conectează la PBX pentru prima dată, acesta va fi înregistrat în contul „<b>apv-miko-pbx</b>”.
+<br>Dacă telefonul se conectează la PBX pentru prima dată, acesta va fi înregistrat în contul „<b>apv-dzvin-pbx</b>”.
 <br>Pentru a configura telefonul, trebuie să apelați „<b>%extension%</b>” de la acesta, unde XXX este numărul intern al PBX-ului.
 <br><br>
 Autoconfigurarea este posibilă numai pentru rețeaua locală a întreprinderii, pentru telefoanele <b>Yealink, Snom, Fanvil</b>.',

@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Modules\ModuleAutoprovision\Lib;
 
-use MikoPBX\Core\System\SystemMessages;
+use DzvinPBX\Core\System\SystemMessages;
 use Modules\ModuleAutoprovision\Models\Templates;
 use Modules\ModuleAutoprovision\Models\TemplatesUri;
 use Throwable;

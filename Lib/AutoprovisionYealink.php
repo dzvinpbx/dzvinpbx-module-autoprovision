@@ -30,15 +30,15 @@ class AutoprovisionYealink extends Autoprovision implements ConfManager
 
         $filename = "{$this->tempDir}/{$req_data['mac']}.txt";
 
-        $sip_port             = $this->mikoPBXConfig->getGeneralSettings('SIPPort');
-        $web_port             = $this->mikoPBXConfig->getGeneralSettings('WEBPort');
-        $voice_mail_extension = $this->mikoPBXConfig->getGeneralSettings('VoicemailExten');
+        $sip_port             = $this->dzvinPBXConfig->getGeneralSettings('SIPPort');
+        $web_port             = $this->dzvinPBXConfig->getGeneralSettings('WEBPort');
+        $voice_mail_extension = $this->dzvinPBXConfig->getGeneralSettings('VoicemailExten');
         $cfg                  = "#!version:1.0.0.1\r\n";
         foreach ($sip_peers as $line => $sip_peer) {
             // Enable or disable the account1, 0-Disabled (default), 1-Enabled;
             $cfg .= "account.{$line}.enable = 1\r\n";
             // Configure the label displayed on the LCD screen for account1.
-            $cfg .= "account.{$line}.label = MikoPBX ({$sip_peer['extension']})\r\n";
+            $cfg .= "account.{$line}.label = DzvinPBX ({$sip_peer['extension']})\r\n";
             // Configure the display name of account1.
             $cfg .= "account.{$line}.display_name = {$sip_peer['callerid']}\r\n";
             // Configure the username and password for register authentication.
@@ -86,7 +86,7 @@ class AutoprovisionYealink extends Autoprovision implements ConfManager
         $cfg .= "features.intercom.barge = 1\r\n";
 
         // Configure DTMF sequences. It can be consisted of digits, alphabets, * and #.
-        $featureAttendedTransfer = $this->mikoPBXConfig->getGeneralSettings('PBXFeatureAttendedTransfer');
+        $featureAttendedTransfer = $this->dzvinPBXConfig->getGeneralSettings('PBXFeatureAttendedTransfer');
         $cfg                     .= "features.dtmf.transfer = {$featureAttendedTransfer}\r\n";
         // Enable or disable the phone to send DTMF sequences during
         // a call when pressing the transfer soft key or the TRAN key; 0-Disabled (default), 1-Enabled;
