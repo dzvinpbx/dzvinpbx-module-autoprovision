@@ -11,7 +11,7 @@ Automatic IP phone provisioning module for Dzvin PBX. Discovers phones on the lo
 ## Features
 
 - Automatic phone discovery and registration via SIP PnP (multicast `224.0.1.75:5060`)
-- Vendor-specific configuration generation for Yealink, Snom, Fanvil
+- Vendor-specific configuration generation for Yealink, Snom, Fanvil, Grandstream, Htek
 - Shared phonebook for Yealink (XML) and Grandstream (text)
 - Template engine with variable substitution (`{SIP_USER_NAME}`, `{SIP_NUM}`, `{SIP_PASS}`)
 - URI pattern matching with `%` wildcard for flexible delivery
@@ -28,7 +28,8 @@ Automatic IP phone provisioning module for Dzvin PBX. Discovers phones on the lo
 | **Yealink** | T18P, T19D, T21D, T28P, W52P (DECT) |
 | **Snom** | All PnP-capable models |
 | **Fanvil** | All PnP-capable models |
-| **Grandstream** | Phonebook only |
+| **Grandstream** | Template-based config, phonebook |
+| **Htek** | Template-based config |
 
 ## Installation
 
